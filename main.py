@@ -9,6 +9,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ========================
+# 🤗 HUGGING FACE LOGIN (NEW)
+# ========================
+from huggingface_hub import login
+
+HF_TOKEN = os.getenv("HF_TOKEN")
+if HF_TOKEN:
+    login(token=HF_TOKEN)
+
+# ========================
 # 📚 LANGCHAIN IMPORTS
 # ========================
 from langchain_community.vectorstores import FAISS
@@ -33,7 +42,7 @@ db = None
 llm = None
 
 # ========================
-# 🔄 LOAD AI IN BACKGROUND (IMPORTANT FIX)
+# 🔄 LOAD AI IN BACKGROUND
 # ========================
 def load_ai():
     global db, llm
@@ -45,7 +54,7 @@ def load_ai():
         loader = TextLoader("company_data.txt", encoding="utf-8")
         documents = loader.load()
 
-        # Embeddings
+        # Embeddings (will now use HF token)
         embeddings = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
@@ -96,7 +105,7 @@ class ChatRequest(BaseModel):
     message: str
 
 # ========================
-# 🏠 ROOT CHECK (IMPORTANT)
+# 🏠 ROOT CHECK
 # ========================
 @app.get("/")
 def home():
@@ -115,13 +124,13 @@ def save_lead(lead: Lead):
     return {"status": "saved"}
 
 # ========================
-# 💬 CHAT (RAG)
+# 💬 CHAT
 # ========================
 @app.post("/chat")
 def chat(req: ChatRequest):
     global db, llm
 
-    # ⏳ If AI not ready yet
+    # ⏳ If AI still loading
     if db is None or llm is None:
         return {"reply": "⏳ Server is starting, try again in a few seconds..."}
 
@@ -130,7 +139,7 @@ def chat(req: ChatRequest):
         docs = db.similarity_search(req.message, k=3)
         context = " ".join([doc.page_content for doc in docs])
 
-        # Ask LLM
+        # LLM response
         response = llm.invoke([
             {
                 "role": "system",
