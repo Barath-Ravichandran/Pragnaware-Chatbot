@@ -1,0 +1,171 @@
+Pragnaware Solutions Pvt Ltd is a Bengaluru-based company specializing in AI-driven, automation, and cybersecurity solutions. The company combines expertise in Artificial Intelligence (AI), Machine Learning (ML), Natural Language Processing (NLP), and digital security to build intelligent, scalable, and privacy-first systems.
+
+Pragnaware serves industries including BFSI, Travel, Food & Hospitality, and Infrastructure & Construction. The focus is on delivering secure, innovative, and compliant digital transformation solutions.
+
+---
+
+Pragnaware Solutions delivers AI-driven and cybersecurity-focused digital solutions that help businesses innovate, scale, and stay protected. The company builds intelligent, secure, and privacy-first digital ecosystems.
+
+---
+
+Cybersecurity and AI are critical today. A cyberattack occurs every 39 seconds, the average data breach cost is $4.45 million, and over 80% of enterprises are adopting AI. Pragnaware helps businesses stay ahead with secure AI innovation.
+
+---
+
+Core Services offered by Pragnaware Solutions:
+
+AI & Automation:
+- AI-powered chatbots and voice bots
+- NLP-based document and speech analysis
+- Process automation (RPA)
+- Predictive analytics
+- Custom AI model development
+
+Cybersecurity:
+- Vulnerability Assessment and Penetration Testing (VAPT)
+- AI-driven threat detection
+- Patch and vulnerability management
+- Configuration audits (CIS compliance)
+- SecOps integration
+
+Web & Mobile Development:
+- Responsive websites
+- Custom web applications
+- Android and iOS apps
+- API and backend systems
+
+UI/UX & Branding:
+- UI/UX design and prototyping
+- Brand identity development
+- Design systems
+- Usability testing
+
+Ads & Video (Creative Leap):
+- Social media campaigns
+- Video production
+- Motion graphics
+- Content strategy
+
+Staffing Solutions (RightFit):
+- IT and non-IT hiring
+- Contract and permanent staffing
+- Dedicated teams
+- Talent screening
+
+---
+
+Core Verticals:
+
+DEEP – AI, ML, NLP systems  
+VIP – Voice intelligence (IVIN platform)  
+SHIELD – Cybersecurity solutions  
+TRUST – Privacy and compliance  
+EDU – Learning platforms  
+RIGHTFIT – Talent solutions  
+VISION – Future technology and innovation  
+
+---
+
+Products:
+
+IVIN Minutes (Production):
+AI-powered platform for real-time and recorded meeting transcription, summaries, and insights using speech-to-text and text-to-speech technologies. Built with secure and encrypted processing.
+
+IVIN Restaurant (Pilot):
+AI-based automation solution for restaurant operations and customer interaction.
+
+IVIN 24/7 (Pilot):
+AI conversational assistant for continuous customer engagement.
+
+---
+
+Learning Management System (LMS):
+
+Pragnaware provides an AI-powered Learning Management System with integrated virtual labs to help students gain hands-on experience and become industry-ready. The platform is secure, scalable, and cloud-enabled.
+
+---
+
+Cybersecurity Details:
+
+- Vulnerability management using CVE, EPSS, and CISA KEV
+- Patch management (agent and agentless)
+- Configuration audits based on CIS benchmarks
+- Compliance support for ISO 27001 and PCI-DSS
+
+The platform is built for automation, visibility, and scalability across cloud and hybrid environments.
+
+---
+
+Privacy and Compliance:
+
+Pragnaware follows a privacy-first approach ensuring secure data handling and compliance with:
+
+- DPDP (India)
+- GDPR (Europe)
+- PIPEDA (Canada)
+
+Privacy is a core foundation of all solutions.
+
+---
+
+Partnerships:
+
+Pragnaware partners with Consign IT Pvt Ltd to provide MSME growth solutions, including digital transformation, online presence, and business scaling strategies.
+
+---
+
+Recognitions:
+
+- DPIIT Recognized Startup under Startup India
+- MSME and UDYAM Registered
+- DSCI Corporate Member (Data Security Council of India)
+
+---
+
+Vision and Mission:
+
+Vision:
+To empower businesses globally with intelligent technologies for smarter operations and sustainable digital transformation.
+
+Mission:
+To deliver AI, automation, and cloud solutions that improve efficiency and unlock digital potential.
+
+---
+
+Leadership Team:
+
+Selvakumar Baskaran – Technical Director with 25+ years of experience in AI, cybersecurity, cloud, and enterprise innovation.
+
+Deivam R – Marketing Director focused on business growth, automation, and market expansion.
+
+---
+
+Team:
+
+Barathanand R – NLP Engineer specializing in LLMs, RAG, prompting, and real-time AI solutions.
+
+Thrisha – AI Full Stack Developer focused on end-to-end AI product development.
+
+Sanjay – AI Web Developer building AI-powered websites.
+
+Heera – AI and CRM Analyst working on AI-driven CRM solutions.
+
+---
+
+Careers:
+
+Join Pragnaware Solutions to work on AI, cybersecurity, cloud, and digital transformation projects.
+
+Open roles include:
+- Internship (3 months)
+- DevOps Engineer (1 to 3 years)
+
+Benefits include real project experience, mentorship, and career growth opportunities.
+
+---
+
+Contact Information:
+
+Phone: +91 9845136362  
+Email: connect@pragnaware.com  
+Address: Indiranagar, Bengaluru, India
