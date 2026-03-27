@@ -1,7 +1,6 @@
 fastapi
 uvicorn
 python-dotenv
-sqlite3
 langchain
 langchain-community
 langchain-openai
