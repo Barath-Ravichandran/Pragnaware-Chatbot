@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import sqlite3
 import os
+import threading
 
 # Load env
 from dotenv import load_dotenv
@@ -26,44 +27,48 @@ app = FastAPI()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # ========================
-# 🌍 GLOBAL OBJECTS (INIT EMPTY)
+# 🌍 GLOBAL OBJECTS
 # ========================
 db = None
 llm = None
 
 # ========================
-# 🚀 STARTUP EVENT (IMPORTANT FIX)
+# 🔄 LOAD AI IN BACKGROUND (IMPORTANT FIX)
 # ========================
-@app.on_event("startup")
-def startup_event():
+def load_ai():
     global db, llm
 
     try:
-        print("🚀 Starting up...")
+        print("🔄 Loading AI...")
 
-        # 📚 Load documents
+        # Load documents
         loader = TextLoader("company_data.txt", encoding="utf-8")
         documents = loader.load()
 
-        # 🧠 Embeddings
+        # Embeddings
         embeddings = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
 
-        # 📦 Vector DB
+        # Vector DB
         db = FAISS.from_documents(documents, embeddings)
 
-        # 🤖 LLM
+        # LLM
         llm = ChatOpenAI(
             model="gpt-4o-mini",
             temperature=0.3,
             openai_api_key=OPENAI_API_KEY
         )
 
-        print("✅ Startup completed successfully!")
+        print("✅ AI Loaded!")
 
     except Exception as e:
-        print("❌ Startup failed:", str(e))
+        print("❌ AI load error:", str(e))
+
+
+@app.on_event("startup")
+def startup_event():
+    threading.Thread(target=load_ai).start()
 
 
 # ========================
@@ -91,6 +96,13 @@ class ChatRequest(BaseModel):
     message: str
 
 # ========================
+# 🏠 ROOT CHECK (IMPORTANT)
+# ========================
+@app.get("/")
+def home():
+    return {"status": "API is running 🚀"}
+
+# ========================
 # 💾 SAVE LEAD
 # ========================
 @app.post("/save-lead")
@@ -109,15 +121,16 @@ def save_lead(lead: Lead):
 def chat(req: ChatRequest):
     global db, llm
 
+    # ⏳ If AI not ready yet
     if db is None or llm is None:
-        return {"reply": "⚠️ Server is still starting. Please try again in a few seconds."}
+        return {"reply": "⏳ Server is starting, try again in a few seconds..."}
 
     try:
-        # 🔍 Retrieve relevant docs
+        # Retrieve context
         docs = db.similarity_search(req.message, k=3)
         context = " ".join([doc.page_content for doc in docs])
 
-        # 🤖 Ask LLM
+        # Ask LLM
         response = llm.invoke([
             {
                 "role": "system",
@@ -143,14 +156,7 @@ def get_leads():
     return cursor.fetchall()
 
 # ========================
-# 🏠 ROOT CHECK (IMPORTANT)
-# ========================
-@app.get("/")
-def home():
-    return {"status": "API is running 🚀"}
-
-# ========================
-# ▶️ RUN (LOCAL / RENDER)
+# ▶️ RUN
 # ========================
 if __name__ == "__main__":
     import uvicorn
