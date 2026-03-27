@@ -123,3 +123,10 @@ def chat(req: ChatRequest):
 def get_leads():
     cursor.execute("SELECT * FROM leads")
     return cursor.fetchall()
+
+import os
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
